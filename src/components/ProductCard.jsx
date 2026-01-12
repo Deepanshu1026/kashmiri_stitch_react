@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ProductCard = ({ img, title, price, category }) => {
+const ProductCard = ({ id, img, title, price, category }) => {
     return (
         <div className="ul-product">
             <div className="ul-product-img">
@@ -10,7 +10,7 @@ const ProductCard = ({ img, title, price, category }) => {
                     <button><i className="flaticon-heart"></i></button>
                     <button><i className="flaticon-search-interface-symbol"></i></button>
                     <Link to="/cart"><i className="flaticon-shopping-bag"></i></Link>
-                    <Link to="/shop"><i className="flaticon-arrow-point-to-right"></i></Link>
+                    <Link to={`/shop/${id}`}><i className="flaticon-arrow-point-to-right"></i></Link>
                 </div>
             </div>
             <div className="ul-product-txt">
@@ -19,10 +19,10 @@ const ProductCard = ({ img, title, price, category }) => {
                     <span className="ul-product-discount-tag">New Arrival</span>
                 </div>
                 <h5 className="ul-product-title">
-                    <Link to="/shop">{title}</Link>
+                    <Link to={`/shop/${id}`}>{title}</Link>
                 </h5>
                 <p className="ul-product-category">
-                    <Link to="/shop">{category}</Link>
+                    <Link to={`/shop/${id}`}>{category}</Link>
                 </p>
             </div>
         </div>

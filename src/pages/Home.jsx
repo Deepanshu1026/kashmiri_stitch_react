@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
+import { products } from '../data/products';
 
 const Home = () => {
     useEffect(() => {
@@ -54,23 +55,8 @@ const Home = () => {
         }
     }, []);
 
-    const products = [
-        { id: 1, img: "/assets/img/product-img-1.jpg", title: "Blue Kurta & Palazzo", price: "58.00", category: "Women" },
-        { id: 2, img: "/assets/img/product-img-2.jpg", title: "Red Kurta Set", price: "42.00", category: "Women" },
-        { id: 3, img: "/assets/img/product-img-3.jpg", title: "Classic Navy Suit", price: "150.00", category: "Men" },
-        { id: 4, img: "/assets/img/product-img-4.jpg", title: "White Embroidered", price: "99.00", category: "Women" },
-        { id: 5, img: "/assets/img/product-img-5.jpg", title: "Summer Breeze", price: "60.00", category: "Women" },
-        { id: 6, img: "/assets/img/product-img-1.jpg", title: "Elegant Scarf", price: "25.00", category: "Accessories" },
-        { id: 7, img: "/assets/img/product-img-2.jpg", title: "Party Wear", price: "85.00", category: "Women" },
-        { id: 8, img: "/assets/img/product-img-3.jpg", title: "Casual Shirt", price: "35.00", category: "Men" },
-    ];
-
-    const trendingProducts = [
-        { id: 9, img: "/assets/img/product-img-3.jpg", title: "Floral Dress", price: "75.00", category: "Women" },
-        { id: 10, img: "/assets/img/product-img-5.jpg", title: "Casual Shirt", price: "45.00", category: "Men" },
-        { id: 11, img: "/assets/img/product-img-2.jpg", title: "Kids Party Wear", price: "35.00", category: "Kids" },
-        { id: 12, img: "/assets/img/product-img-4.jpg", title: "Designer Saree", price: "120.00", category: "Women" },
-    ];
+    const trendingProducts = products.filter(p => p.id >= 9 && p.id <= 12);
+    const regularProducts = products.filter(p => p.id <= 8);
 
 
     return (
@@ -155,9 +141,10 @@ const Home = () => {
                     </div>
 
                     <div className="row row-cols-xxl-4 row-cols-xl-3 row-cols-lg-3 row-cols-2 row-cols-xxs-1 ul-bs-row">
-                        {products.map(product => (
+                        {regularProducts.map(product => (
                             <div className="col" key={product.id}>
                                 <ProductCard
+                                    id={product.id}
                                     img={product.img}
                                     title={product.title}
                                     price={product.price}
@@ -271,6 +258,7 @@ const Home = () => {
                         {trendingProducts.map(product => (
                             <div className="col" key={product.id}>
                                 <ProductCard
+                                    id={product.id}
                                     img={product.img}
                                     title={product.title}
                                     price={product.price}

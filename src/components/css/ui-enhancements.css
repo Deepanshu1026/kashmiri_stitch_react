@@ -1,0 +1,323 @@
+/* UI Enhancements - Consolidating previous and new changes */
+
+/* 1. Header Search Bar Styling */
+.ul-header-search-form {
+    border: 1px solid #e1e1e1;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    overflow: hidden;
+    height: 50px;
+}
+
+.ul-header-search-form .dropdown-wrapper {
+    position: relative;
+    border-right: 1px solid #e1e1e1;
+}
+
+.ul-header-search-form #ul-header-search-category {
+    border: none;
+    background: transparent;
+    padding: 0 15px;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 30px;
+    /* Space for arrow */
+}
+
+/* Custom Arrow for select */
+.ul-header-search-form .dropdown-wrapper::after {
+    content: '\f135';
+    font-family: flaticon_glamer !important;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    pointer-events: none;
+    font-weight: bold;
+}
+
+.ul-header-search-form-right {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 5px;
+}
+
+.ul-header-search-form-right input {
+    border: none;
+    padding: 0 15px;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    color: #555;
+    background: transparent;
+}
+
+.ul-header-search-form-right button {
+    background: #1a1a1a;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background 0.3s;
+}
+
+.ul-header-search-form-right button:hover {
+    background: #333;
+}
+
+.ul-header-search-form-right button i {
+    font-size: 16px;
+    display: flex;
+    font-weight: bold;
+}
+
+/* 2. Product Details Page Header Override */
+.product-details-header-wrapper {
+    margin-bottom: 30px;
+}
+
+.product-details-title-top {
+    font-size: 48px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* New Breadcrumb Style - Individual Pills */
+.product-details-breadcrumb-box {
+    background-color: transparent;
+    /* Removed big pink box */
+    padding: 0;
+    text-align: left;
+    display: block;
+}
+
+.product-details-breadcrumb-box .ul-breadcrumb {
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-details-breadcrumb-box .ul-breadcrumb li {
+    font-weight: 500;
+    font-size: 14px;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+}
+
+.product-details-breadcrumb-box .ul-breadcrumb li a,
+.product-details-breadcrumb-box .ul-breadcrumb li span.current-page {
+    background-color: #f3f4f6;
+    /* Gray background for pills */
+    padding: 8px 16px;
+    border-radius: 8px;
+    /* Rounded corners */
+    color: #374151;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.product-details-breadcrumb-box .ul-breadcrumb li span.separator {
+    color: #9ca3af;
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+.product-details-breadcrumb-box .ul-breadcrumb li a:hover {
+    background-color: #e5e7eb;
+    color: #000;
+}
+
+/* Specific style for home icon */
+.product-details-breadcrumb-box .ul-breadcrumb li a i {
+    font-size: 16px;
+    position: relative;
+    top: -1px;
+}
+
+/* Style for active page (last item) */
+.product-details-breadcrumb-box .ul-breadcrumb li span.current-page {
+    background-color: transparent;
+    /* Or keep it consistent? User showed blue text. Let's make it consistent pill but blue text */
+    color: #2563eb;
+    /* Blueish active color */
+    font-weight: 600;
+    padding-left: 0;
+    /* Remove padding if we want it to look like text, but screenshot shows pills. User screenshot 3 shows pills for Dashboard, Trans, Cat, Add Cat. */
+    /* Wait, screenshot shows ALL items as pills except maybe separators. */
+    background-color: #f3f4f6;
+    padding: 8px 16px;
+}
+
+.ul-product-details {
+    padding-top: 30px;
+}
+
+
+/* 3. Product Hover Actions (Matches User's first screenshot) */
+.ul-product-actions {
+    position: absolute;
+    display: flex;
+    gap: 15px;
+    /* Increased gap */
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Precise centering */
+    transition: 0.4s ease;
+    pointer-events: none;
+    opacity: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.ul-product:hover .ul-product-actions {
+    opacity: 1;
+    pointer-events: all;
+    top: 50%;
+    /* Ensure it stays centered */
+}
+
+.ul-product-actions a,
+.ul-product-actions button {
+    border: none;
+    /* Removed border */
+    width: 50px;
+    /* Larger circles */
+    height: 50px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    /* White icons */
+    background-color: #1a1a1a;
+    /* Dark background default */
+    padding: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
+}
+
+/* Ensure icons are centered */
+.ul-product-actions a i,
+.ul-product-actions button i {
+    padding-top: 0;
+    /* REMOVED padding which pushed icons down */
+    font-size: 18px;
+    display: flex;
+    /* Flex to center */
+}
+
+/* Hover effect */
+.ul-product-actions a:hover,
+.ul-product-actions button:hover {
+    background-color: #d12a2a;
+    /* Brand Red/Pink on hover */
+    transform: translateY(-3px);
+    /* Slight lift */
+    color: #fff;
+}
+
+
+/* 4. Quantity Buttons (Matches User's second screenshot - Horizontal + Black w/ Icons) */
+.ul-product-details-quantity {
+    display: inline-block;
+}
+
+.ul-product-details-quantity form {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 5px;
+    gap: 5px;
+    width: fit-content;
+}
+
+.ul-product-details-quantity form input {
+    border: none;
+    border-right: none;
+    /* Remove separator */
+    max-width: 50px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: #1a1a1a;
+    background: transparent;
+    order: 2;
+    /* Value in middle */
+}
+
+.ul-product-details-quantity form .btns {
+    display: contents;
+    /* Ungroup the div wrapper */
+}
+
+/* Common button style */
+.ul-product-details-quantity form button {
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+    /* Slightly rounded squares */
+    background-color: #1a1a1a;
+    /* Dark background */
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 14px;
+    padding: 0 !important;
+}
+
+.ul-product-details-quantity form button:hover {
+    background-color: #333;
+}
+
+/* Button ordering */
+.ul-product-details-quantity form button.minus-btn {
+    order: 1;
+    /* Minus first */
+}
+
+.ul-product-details-quantity form button.plus-btn {
+    order: 3;
+    /* Plus last */
+}
+
+/* Override existing conflicting styles from style.css */
+.ul-product-details-quantity form .btns button:first-child {
+    border-bottom: none;
+}

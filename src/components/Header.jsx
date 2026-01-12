@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 const Header = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const { cart } = useCart();
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -143,9 +145,9 @@ const Header = () => {
                                     <nav className="ul-header-nav">
                                         <Link to="/">Home</Link>
                                         <Link to="/shop">Shop</Link>
-                                        <Link to="/shop">Women</Link>
-                                        <Link to="/shop">Men's</Link>
-                                        <Link to="/shop">Kids</Link>
+                                        <Link to="/shop?category=Women">Women</Link>
+                                        <Link to="/shop?category=Men">Men's</Link>
+                                        <Link to="/shop?category=Kids">Kids</Link>
                                         <Link to="/blog">Blog</Link>
 
                                         <div className="has-sub-menu has-mega-menu">
@@ -172,7 +174,12 @@ const Header = () => {
                                     className="flaticon-search-interface-symbol"></i></button>
                                 <Link to="/login"><i className="flaticon-user"></i></Link>
                                 <Link to="/wishlist"><i className="flaticon-heart"></i></Link>
-                                <Link to="/cart"><i className="flaticon-shopping-bag"></i></Link>
+                                <Link to="/cart" className="position-relative">
+                                    <i className="flaticon-shopping-bag"></i>
+                                    {cart.length > 0 && <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style={{ fontSize: '10px', padding: '0.25em 0.5em' }}>
+                                        {cart.length}
+                                    </span>}
+                                </Link>
                             </div>
 
                             {/* sidebar opener */}
