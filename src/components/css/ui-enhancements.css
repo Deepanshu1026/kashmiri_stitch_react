@@ -398,3 +398,83 @@
     border-color: #ddd;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
+
+/* 6. Sticky Header */
+.ul-header.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    animation: slideDown 0.3s ease-in-out;
+}
+
+.ul-header.sticky-header .ul-header-top {
+    display: none;
+    /* Hide top bar on scroll */
+}
+
+.ul-header.sticky-header .ul-header-bottom {
+    padding: 10px 0;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* 7. Active Nav Link */
+.ul-header-nav a.active {
+    color: #d12a2a;
+    /* Brand color */
+    font-weight: 600;
+}
+
+/* 8. Newsletter Section */
+.ul-newsletter {
+    background-color: #fff;
+}
+
+.ul-newsletter h3 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* 9. Contact Page Icons */
+.ul-contact-info .icon-box {
+    width: 50px;
+    height: 50px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d12a2a;
+    transition: all 0.3s ease;
+}
+
+.ul-contact-info .d-flex:hover .icon-box {
+    background-color: #d12a2a;
+    color: #fff;
+}
+
+.ul-contact-form-wrapper {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* 10. About Page Team Image */
+.ul-team-member-img img {
+    transition: transform 0.5s ease;
+}
+
+.ul-team-member:hover .ul-team-member-img img {
+    transform: scale(1.05);
+}
