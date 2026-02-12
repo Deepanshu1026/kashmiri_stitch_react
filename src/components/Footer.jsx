@@ -5,73 +5,67 @@ const Footer = () => {
     return (
         <footer className="ul-footer">
             <div className="ul-inner-container">
+                {/* Newsletter Section */}
+                <div className="ul-newsletter py-5 border-bottom mb-5">
+                    <div className="row align-items-center">
+                        <div className="col-lg-6">
+                            <h3 className="mb-2">Subscribe to our Newsletter</h3>
+                            <p className="mb-0 text-muted">Get the latest updates on new products and upcoming sales.</p>
+                        </div>
+                        <div className="col-lg-6 mt-4 mt-lg-0">
+                            <form className="d-flex gap-2" onSubmit={(e) => e.preventDefault()}>
+                                <input type="email" className="form-control rounded-pill py-3 px-4 border-0 bg-light" placeholder="Your Email Address" required />
+                                <button type="submit" className="ul-btn rounded-pill px-5">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="ul-footer-top">
+                    {/* ... (existing top widgets with updated Links) ... */}
                     <div className="ul-footer-top-widget">
                         <h3 className="ul-footer-top-widget-title">Brands</h3>
                         <div className="ul-footer-top-widget-links">
-                            <a href="#">Zara</a>
-                            <a href="#">Guess</a>
-                            <a href="#">Mango</a>
-                            <a href="#">LCWaikiki</a>
-                            <a href="#">Monda</a>
+                            <Link to="/shop">Pashmina</Link>
+                            <Link to="/shop">Kani</Link>
+                            <Link to="/shop">Sozni</Link>
+                            <Link to="/shop">Paper Mache</Link>
+                            <Link to="/shop">Aari</Link>
                         </div>
                     </div>
 
                     <div className="ul-footer-top-widget">
                         <h3 className="ul-footer-top-widget-title">Categories</h3>
                         <div className="ul-footer-top-widget-links">
-                            <Link to="/shop">Women</Link>
-                            <Link to="/shop">Men</Link>
-                            <Link to="/shop">Kids</Link>
+                            <Link to="/shop?category=Women">Women</Link>
+                            <Link to="/shop?category=Men">Men</Link>
+                            <Link to="/shop?category=Kids">Kids</Link>
+                            <Link to="/shop?category=Accessories">Accessories</Link>
                         </div>
                     </div>
 
                     <div className="ul-footer-top-widget">
-                        <h3 className="ul-footer-top-widget-title">Accessories</h3>
+                        <h3 className="ul-footer-top-widget-title">Support</h3>
                         <div className="ul-footer-top-widget-links">
-                            <a href="#">Order Tracking</a>
-                            <a href="#">Terms & Conditions</a>
-                            <a href="#">Privacy Policy</a>
-                            <a href="#">Tutorials</a>
-                            <a href="#">FAQ</a>
+                            <Link to="/contact">Order Tracking</Link>
+                            <Link to="/about">Terms & Conditions</Link>
+                            <Link to="/about">Privacy Policy</Link>
+                            <Link to="/contact">FAQ</Link>
                         </div>
                     </div>
 
                     <div className="ul-footer-top-widget">
-                        <h3 className="ul-footer-top-widget-title">Services</h3>
+                        <h3 className="ul-footer-top-widget-title">Company</h3>
                         <div className="ul-footer-top-widget-links">
-                            <a href="#">Sale</a>
-                            <a href="#">Quick Ship</a>
-                            <a href="#">New Designs</a>
-                            <a href="#">Protection Plan</a>
-                            <a href="#">Gift Cards</a>
-                        </div>
-                    </div>
-
-                    <div className="ul-footer-top-widget">
-                        <h3 className="ul-footer-top-widget-title">Policies</h3>
-                        <div className="ul-footer-top-widget-links">
-                            <a href="#">Policy</a>
-                            <a href="#">Dressy Inside</a>
-                            <a href="#">About Us</a>
-                            <a href="#">Company</a>
-                            <a href="#">Careers</a>
-                        </div>
-                    </div>
-
-                    <div className="ul-footer-top-widget">
-                        <h3 className="ul-footer-top-widget-title">Help</h3>
-                        <div className="ul-footer-top-widget-links">
-                            <Link to="/contact">Contact us</Link>
-                            <Link to="/about">About us</Link>
-                            <a href="#">Reviews</a>
-                            <a href="#">Terms of Service</a>
-                            <a href="#">Refund policy</a>
+                            <Link to="/about">About Us</Link>
+                            <Link to="/contact">Contact Us</Link>
+                            <Link to="/shop">Careers</Link>
+                            <Link to="/blog">Blog</Link>
                         </div>
                     </div>
                 </div>
 
-                <div className="ul-footer-middle">
+                <div className="ul-footer-middle mt-5">
                     <div className="ul-footer-middle-widget">
                         <h3 className="ul-footer-middle-widget-title">Download Our Apps</h3>
                         <div className="ul-footer-middle-widget-content">
@@ -88,7 +82,7 @@ const Footer = () => {
                             <div className="social-links">
                                 <a href="#"><i className="flaticon-facebook-app-symbol"></i></a>
                                 <a href="#"><i className="flaticon-twitter"></i></a>
-                                <a href="#"><i className="flaticon-linkedin-big-logo"></i></a>
+                                <a href="#"><i className="flaticon-instagram"></i></a>
                                 <a href="#"><i className="flaticon-youtube"></i></a>
                             </div>
                         </div>
@@ -98,7 +92,7 @@ const Footer = () => {
                         <h3 className="ul-footer-middle-widget-title">Need help? Call now!</h3>
                         <div className="ul-footer-middle-widget-content">
                             <div className="contact-nums">
-                                <a href="tel:1234567890">1234567890</a>
+                                <a href="tel:1234567890">+91 123 456 7890</a>
                             </div>
                         </div>
                     </div>
@@ -109,7 +103,7 @@ const Footer = () => {
                 </div>
 
                 <div className="ul-footer-bottom">
-                    <p className="copyright-txt">Copyright 2026 © <a href="https://temptics.com/" className="ul-footer-bottom-link">Kashmir Stitch</a></p>
+                    <p className="copyright-txt">Copyright 2026 © <Link to="/" className="ul-footer-bottom-link">Kashmir Stitch</Link>. All rights reserved.</p>
                     <img src="/assets/img/payment-methods.png" alt="payment methods logos" />
                 </div>
             </div>
