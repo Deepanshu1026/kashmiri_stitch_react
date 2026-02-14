@@ -47,10 +47,10 @@ const Footer = () => {
                     <div className="ul-footer-top-widget">
                         <h3 className="ul-footer-top-widget-title">Support</h3>
                         <div className="ul-footer-top-widget-links">
-                            <Link to="/contact">Order Tracking</Link>
-                            <Link to="/about">Terms & Conditions</Link>
-                            <Link to="/about">Privacy Policy</Link>
-                            <Link to="/contact">FAQ</Link>
+                            <Link to="/order-tracking">Order Tracking</Link>
+                            <Link to="/terms-conditions">Terms & Conditions</Link>
+                            <Link to="/privacy-policy">Privacy Policy</Link>
+                            <Link to="/faq">FAQ</Link>
                         </div>
                     </div>
 

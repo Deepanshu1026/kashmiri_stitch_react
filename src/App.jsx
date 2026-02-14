@@ -10,6 +10,10 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import FAQ from './pages/FAQ';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
+import OrderTracking from './pages/OrderTracking';
 
 function App() {
     return (
@@ -25,6 +29,10 @@ function App() {
                         <Route path="/signup" element={<Signup />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} />
+                        <Route path="/faq" element={<FAQ />} />
+                        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                        <Route path="/terms-conditions" element={<TermsConditions />} />
+                        <Route path="/order-tracking" element={<OrderTracking />} />
                         <Route path="/shop/:id" element={<ProductDetails />} />
                     </Routes>
                     <Footer />
